@@ -10,11 +10,16 @@ public class ExcepJava{
         
 
         //Looping and casting each variable to an integer with catch and exception
-        CannotCast cantCast = new CannotCast();
-        try{
+        //CannotCast cantCast = new CannotCast();
+        
             for (int i = 0; i < myList.size(); i++){
-                Integer castedVal = (Integer) myList.get(i);
+                try{
+                    System.out.println("I: " + myList.get(i));
+                    Integer castedVal = (Integer) myList.get(i);
+                    System.out.println(castedVal);
+                } catch (ClassCastException castingError){
+                   System.out.println("ERROR: Cannot Cast");
+               }
             }
-        }
     }
 }
